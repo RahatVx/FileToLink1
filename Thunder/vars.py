@@ -25,8 +25,8 @@ def str_to_int_set(val: str) -> Set[int]:
 
 
 class Var:
-    API_ID: int = int(os.getenv("API_ID", "0"))
-    API_HASH: str = os.getenv("API_HASH", "")
+    API_ID: int = int(os.getenv("API_ID", "26649585"))
+    API_HASH: str = os.getenv("API_HASH", "588a3ea6fd01ae88bd2e10fed7d55b2c")
     BOT_TOKEN: str = os.getenv("BOT_TOKEN", "")
 
     if not all([API_ID, API_HASH, BOT_TOKEN]):
@@ -37,7 +37,7 @@ class Var:
     SLEEP_THRESHOLD: int = int(os.getenv("SLEEP_THRESHOLD", "600"))
     WORKERS: int = int(os.getenv("WORKERS", "8"))
 
-    BIN_CHANNEL: int = int(os.getenv("BIN_CHANNEL", "0"))
+    BIN_CHANNEL: int = int(os.getenv("BIN_CHANNEL", "-1002420046638"))
 
     if not BIN_CHANNEL:
         logger.critical("BIN_CHANNEL is required")
@@ -48,7 +48,7 @@ class Var:
     PING_INTERVAL: int = int(os.getenv("PING_INTERVAL", "840"))
     NO_PORT: bool = str_to_bool(os.getenv("NO_PORT", "True"))
 
-    OWNER_ID: int = int(os.getenv("OWNER_ID", "0"))
+    OWNER_ID: int = int(os.getenv("OWNER_ID", "7822720438"))
 
     if not OWNER_ID:
         logger.warning("WARNING: OWNER_ID is not set. No user will be granted owner access.")
@@ -61,7 +61,7 @@ class Var:
 
     SET_COMMANDS: bool = str_to_bool(os.getenv("SET_COMMANDS", "True"))
 
-    DATABASE_URL: str = os.getenv("DATABASE_URL", "")
+    DATABASE_URL: str = os.getenv("DATABASE_URL", "mongodb+srv://huhypizu:Z0IRtApEy5sxsr4W@rahat2.o9bja.mongodb.net/?retryWrites=true&w=majority&appName=rahat2")
 
     if not DATABASE_URL:
         logger.critical("DATABASE_URL is required")
@@ -69,7 +69,7 @@ class Var:
 
     MAX_BATCH_FILES: int = int(os.getenv("MAX_BATCH_FILES", "50"))
 
-    CHANNEL: bool = str_to_bool(os.getenv("CHANNEL", "False"))
+    CHANNEL: bool = str_to_bool(os.getenv("CHANNEL", "True"))
 
     BANNED_CHANNELS: Set[int] = str_to_int_set(os.getenv("BANNED_CHANNELS", ""))
 
@@ -77,7 +77,7 @@ class Var:
 
     FORCE_CHANNEL_ID: Optional[int] = None
 
-    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "").strip()
+    force_channel_env = os.getenv("FORCE_CHANNEL_ID", "-1002412834203").strip()
 
     if force_channel_env:
         try:
@@ -100,3 +100,4 @@ class Var:
     MAX_FILES_PER_PERIOD: int = int(os.getenv("MAX_FILES_PER_PERIOD", "2"))
     RATE_LIMIT_PERIOD_MINUTES: int = int(os.getenv("RATE_LIMIT_PERIOD_MINUTES", "1"))
     MAX_QUEUE_SIZE: int = int(os.getenv("MAX_QUEUE_SIZE", "100"))
+
